@@ -30,7 +30,7 @@ As the packet travels toward its destination, it may pass through multiple route
 
 Each router it passes through is called a **hop**.
 
-## IP Protocol
+## 2. IP Protocol
 
 At the Network Layer, devices use IP addresses for logical addressing and communication across networks.
 
@@ -165,6 +165,13 @@ For the broadcast address, all host bits are `1`.
 
 `198.51.100.255` ← Broadcast Address for `198.51.100.0/24`
 
+Usable Host Range
+
+Usable host addresses are generally located between the Network Address and the Broadcast Address.
+
+- `First usable address = Network Address + 1`
+- `Last usable address = Broadcast Address - 1`
+
 ### Subnet Mask / Net Mask
 
 To identify which bits belong to the network portion and which belong to the host portion, IPv4 uses a **subnet mask**.
@@ -290,7 +297,7 @@ At the Network Layer, an IP packet contains additional control information in it
 
    They allow devices on the same local link to communicate with each other without manually configured addresses.
 
-## Router
+## 3. Router
 
 ![Router](./img/Router.png)
 
@@ -356,3 +363,4 @@ The **Default Gateway** is important when a device needs to communicate with a d
 > **Default Gateway**: The router or Layer 3 device to which a host sends packets when the destination is outside its local network.
 
 For most hosts, the default gateway is the IP address of the router interface connected to the same local network.
+

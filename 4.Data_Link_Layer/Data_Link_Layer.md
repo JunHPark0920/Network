@@ -271,3 +271,9 @@ However, if the destination MAC address is not currently in the MAC address tabl
 7. Future frames addressed to Computer B can then be forwarded directly to the appropriate port.
 
 *A switch does not discover the destination MAC address on behalf of the sending computer. ARP is responsible for discovering the MAC address associated with an IPv4 address, while the switch uses its MAC address table to determine which port should receive an Ethernet frame. This forwarding process is commonly called **MAC address filtering or switching**.*
+
+#### Broadcast vs Flooding
+
+- Broadcast → Traffic is intentionally sent to all devices within the broadcast domain.
+
+- Flooding → A switch forwards a frame out of multiple ports because the destination location is unknown.
