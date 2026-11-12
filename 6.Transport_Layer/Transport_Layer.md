@@ -10,6 +10,8 @@ It identifies which application should receive the data using **port numbers** a
 
 ### Congestion Control
 
+![Congestion](./img/Congestion.png)
+
 > **Congestion Control**: Controlling the amount of data transmitted to prevent excessive congestion in the network.
 
 TCP adjusts the amount of data it sends according to network conditions.
@@ -23,6 +25,8 @@ Afterwards, if acknowledgements continue to arrive successfully, TCP gradually i
 Through this process, TCP adjusts its sending rate according to network conditions.
 
 ### Flow Control
+
+![Flow](./img/Flow.png)
 
 > **Flow Control**: Controlling the transmission rate so that the sender does not send data faster than the receiver can process it.
 
@@ -38,11 +42,15 @@ In TCP, errors and packet loss can be detected using acknowledgements, sequence 
 
 #### ACK Response
 
+![ACK](./img/ACK.png)
+
 When the receiver successfully receives TCP data, it sends an **ACK (Acknowledgement)** indicating the next sequence number it expects.
 
 If expected acknowledgements are not received, the sender may determine that data has been lost.
 
 #### Time Out
+
+![Time](./img/Time_Out.png)
 
 If the sender does not receive an expected acknowledgement within a certain period of time, a **timeout** occurs.
 
@@ -230,3 +238,52 @@ A UDP header contains:
 - Destination Port
 - Length
 - Checksum
+
+## Load Balancer
+
+If too much network traffic is directed to a single server, that server may become overloaded.
+
+Therefore, traffic can be distributed across multiple servers. This process is called **Load Balancing**.
+
+> **Load Balancer**: A device or service that distributes incoming network traffic across multiple servers.
+
+> **Scale Out**: Increasing system capacity by adding more servers instead of upgrading a single server.
+
+Network traffic from clients is sent to the load balancer first. The load balancer then distributes the traffic to backend servers according to a specific load-balancing method.
+
+### Methods of Load Balancing
+
+1. **Round Robin**
+
+Round Robin distributes incoming requests to each server in sequence.
+
+For example:
+
+`Server 1 → Server 2 → Server 3 → Server 1 ...`
+
+2. **Weighted Round Robin**
+
+Weighted Round Robin assigns different weights to servers.
+
+Servers with higher weights receive a larger proportion of the incoming traffic.
+
+This method is useful when some servers have greater processing capacity than others.
+
+3. **Random**
+
+Incoming traffic is distributed randomly among the available servers.
+
+4. **Hash**
+
+A hash value is calculated using information from the client or request, and the result is used to select a server.
+
+This can allow requests from the same client to be consistently directed to the same server.
+
+5. **Port**
+
+Traffic can be directed to different servers or services depending on the destination port.
+
+**Example**
+
+- Port A → Server 1
+- Port B → Server 2
