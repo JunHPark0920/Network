@@ -88,6 +88,8 @@ TCP (Transmission Control Protocol) establishes a connection using the **3-Way H
 
 **Process of 3 Way Handshake**
 
+![3way](./img/Handshake.png)
+
 1. The client sends a **SYN** containing its initial sequence number.
 2. The server responds with **SYN-ACK**. The ACK acknowledges the client's sequence number, while the SYN contains the server's own initial sequence number.
 3. The client sends an **ACK** acknowledging the server's sequence number.
@@ -96,7 +98,7 @@ After this process, the TCP connection is established.
 
 #### TCP Header
 
-[Photo]
+![Header](./img/TCP.png)
 
 At the Transport Layer, the TCP header contains information such as the following.
 
@@ -141,7 +143,7 @@ The destination port allows the receiving system to identify which network servi
 
 Large amounts of data are divided into smaller segments before transmission.
 
-[photo]
+![Sequence](./img/Sequence.png)
 
 **Example**
 
@@ -159,11 +161,11 @@ If the receiver successfully receives the first 500 bytes, it can send:
 
 This means:
 
-> "I have successfully received everything before byte 501, and I expect byte 501 next."
+*"I have successfully received everything before byte 501, and I expect byte 501 next."*
 
 Through sequence and acknowledgement numbers, TCP can detect missing or incorrectly ordered data and maintain the correct byte sequence.
 
-#### Window Size
+#### Window Size (Flow Control)
 
 > **Window Size**: A value used to indicate how much data the receiver is currently prepared to accept.
 
@@ -212,6 +214,8 @@ TCP uses these flags to manage the state of a connection.
 
 ### UDP
 
+![UDPcom](./img/UDPcom.png)
+
 UDP (User Datagram Protocol) sends datagrams without establishing a connection beforehand.
 
 It has less overhead than TCP because it does not provide TCP-style acknowledgements, retransmission, sequencing, flow control, or congestion control.
@@ -228,7 +232,7 @@ UDP is commonly used for applications such as:
 
 #### UDP Header
 
-[photo]
+![UDP](./img/UDP.png)
 
 Unlike TCP, UDP has a much simpler header.
 
@@ -240,6 +244,8 @@ A UDP header contains:
 - Checksum
 
 ## Load Balancer
+
+![Load Balancer](./img/LoadBalancer.png)
 
 If too much network traffic is directed to a single server, that server may become overloaded.
 
