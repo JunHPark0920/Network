@@ -188,17 +188,17 @@ The DHCP allocation process commonly follows **DORA**:
 
 When transmitting emails, SMTP is commonly used for sending mail, while protocols such as POP3 or IMAP can be used by recipients to retrieve mail from a mail server.
 
-[photo instruction]
+![Communication](./img/Communication.png)
 
 ### Communication between a mail server and a sender.
 
-[photo instruction]
+![Sender](./img/Sender.png)
 
 As shown in the picture, the sender's email client sends the required email information to its mail server using SMTP.
 
 ### Communication between mail servers
 
-[photo instruction]
+![StoS](./img/StoS.png)
 
 The sender-side mail server can transmit the email to the receiver-side mail server using SMTP.
 
@@ -208,7 +208,7 @@ The receiving mail server then stores the email in the recipient's mailbox.
 
 ### Communication between a receiver and a mail server
 
-[photo instruction]
+![Receiver](./img/Receiver.png)
 
 The receiver can connect to the mail server using POP3 and retrieve stored email messages.
 
@@ -217,6 +217,8 @@ POP3 commonly downloads messages from the server to the client. Depending on the
 If we want emails to remain synchronised between the server and multiple devices, we can use **IMAP (Internet Message Access Protocol)**.
 
 ## 5. Load Balancer in the Application Layer
+
+![LoadBalancer](./img/LoadBalancer.png)
 
 An Application Layer load balancer can make forwarding decisions using information contained in application-layer traffic.
 
